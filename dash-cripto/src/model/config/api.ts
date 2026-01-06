@@ -9,6 +9,10 @@ export const API_CONFIG = {
         listener: 'coins/markets'
     },
     params: {
-        'x_cg_demo_api_key': api_key
+        'x_cg_demo_api_key': api_key,
+        'vs_currency': 'brl',
+        'order': 'market_cap_desc',
+        'per_page': 5,
+        'page': 1
     }
 }

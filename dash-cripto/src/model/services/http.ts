@@ -1,19 +1,21 @@
-import axios from "axios";
+import axios, { type AxiosInstance } from "axios";
 import { API_CONFIG } from "@/model/config/api";
 import type { Coin } from "@/model/types/tipos";
 
-const api = axios.create({
-    baseURL: API_CONFIG.baseUrl,
-    params: API_CONFIG.params
-})
+class CoinModel {
+    private readonly api: AxiosInstance
 
-export const allCoins = async (): Promise<Coin[]> => {
-    try {
-        const response = await api.get(API_CONFIG.endpoints.trending)
+    constructor() {
+        this.api = axios.create({
+            baseURL: API_CONFIG.baseUrl,
+            params: API_CONFIG.params
+        })
+    }
+
+    async getCoins(): Promise<Coin[]> {
+        const response = await this.api.get(API_CONFIG.endpoints.listener)
         return response.data
     }
-    catch (error) {
-        console.error(error)
-        return []
-    }
 }
+
+export default new CoinModel()

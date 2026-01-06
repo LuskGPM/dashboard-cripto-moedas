@@ -1,8 +1,9 @@
 export interface Coin {
-    id: String;
-    symbol: String;
-    name: String;
-    current_price: Number;
-    price_change_24h: Number;
-    last_update: Date | String;
+    id: string;
+    symbol: string;
+    name: string;
+    image: string;
+    current_price: number;
+    price_change_24h: number;
+    last_update: Date | string;
 }
