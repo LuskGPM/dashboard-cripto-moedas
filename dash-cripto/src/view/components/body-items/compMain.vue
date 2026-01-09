@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCoinStore } from '@/vm/stores/pinia';
-import { stringToLocaleUpperCase, stringToCapitalize } from '@/vm/utils/format_data';
+import { stringToLocaleUpperCase, stringToCapitalize, formatPrice } from '@/vm/utils/format_data';
 
 const store = useCoinStore();
 </script>
@@ -9,11 +9,13 @@ const store = useCoinStore();
     <main>
         <section id="mainCoins" class="container-fluid row">
             <div class="col" v-for="coin in store.mainCoins">
-                <h2>{{ stringToCapitalize(coin.id) }} ({{ stringToLocaleUpperCase(coin.symbol) }})</h2>
+                <h2>
+                    <img v-if="coin.image" :src="coin.image" alt="imagem moeda" width="35px">
+                     {{ stringToCapitalize(coin.id) }} ({{ stringToLocaleUpperCase(coin.symbol) }})</h2>
                 <div class="container">
                     <div class="d-flex justify-content-between gradient">
                         <span>
-                            {{ coin.current_price }}
+                            {{ formatPrice(coin.current_price) }}
                         </span>
                         <span>
                             Preço atual
@@ -34,7 +36,9 @@ const store = useCoinStore();
     }
 
     .gradient {
-
+        width: 400px;
+        margin: auto;
+        margin-top: 30px;
     }
 }
 
@@ -42,6 +46,10 @@ const store = useCoinStore();
     box-shadow: var(--box-shadow);
     padding: 20px;
     margin: 0;
+
+    h2 {
+        text-align: center;
+    }
 }
 
 .gradient {

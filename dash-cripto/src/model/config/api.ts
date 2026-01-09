@@ -12,7 +12,7 @@ export const API_CONFIG = {
         'x_cg_demo_api_key': api_key,
         'vs_currency': 'brl',
         'order': 'market_cap_desc',
-        'per_page': 5,
+        'per_page': 100,
         'page': 1
     }
 }

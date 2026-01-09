@@ -19,9 +19,12 @@ import compBody from './view/components/compBody.vue';
   body, html {
     min-height: 100vh;
     min-width: 100vw;
-    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
+  * {
     margin: 0;
     padding: 0;
-    overflow-x: clip;
+    box-sizing: border-box;
   }
 </style>

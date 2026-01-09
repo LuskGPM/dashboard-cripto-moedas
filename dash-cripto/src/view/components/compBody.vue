@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 import { useCoinStore } from '@/vm/stores/pinia';
 import compMain from './body-items/compMain.vue';
+import BarCharts from '../charts/BarCharts.vue';
 const store = useCoinStore();
 
 onMounted(async () => {
@@ -14,6 +15,7 @@ onMounted(async () => {
 <template>
     <body class="light-mode">
         <compMain/>
+        <BarCharts/>
     </body>
 </template>
 
