@@ -13,7 +13,7 @@ import compBody from './view/components/compBody.vue';
     --border: #E3E1DE;
     --text: #000000;
     --text-2: #fff;
-    --box-shadow: 5px 5px 10px #00000045;
+    --box-shadow: 3px 3px 6px #00000028;
   }
 
   body, html {

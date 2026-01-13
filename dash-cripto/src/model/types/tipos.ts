@@ -6,4 +6,6 @@ export interface Coin {
     current_price: number;
     price_change_24h: number;
     last_update: Date | string;
+    high_24h: number,
+    low_24h: number
 }
